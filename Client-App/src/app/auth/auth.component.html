@@ -1,0 +1,14 @@
+<form class="row g-3 m-3 bg-light" [formGroup]='form'>
+    <div class="title"><p>{{title}}</p></div>
+    <div class="col-auto">
+        <label for="email">Email</label>
+        <input type="text" formControlName='email' class="form-control" id="email" placeholder="Enter a email">
+      </div>
+    <div class="col-auto">
+      <label for="password" >Password</label>
+      <input type="password" formControlName='password' class="form-control" id="password" placeholder="Password">
+    </div>
+    <div class="col-auto">
+      <button type="submit" (click)="authorization()" class="btn btn-primary mt-4">{{btnTitle}}</button>
+    </div>
+  </form>

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-1">
+        <label for="item" class="form-label">Ro'yxat qoshish</label>
+    </div>
+    <div class="col-3">
+        <div class="mb-2">
+            <input type="text" (keyup.enter)="saveItem()" [(ngModel)]="item.text" name="text" class="form-control"
+                id="item" placeholder="Masalan: Uy ishini bajarish">
+        </div>
+    </div>
+    <div class="col">
+        <div class="mb-3">
+            <button (click)="saveItem()" class="btn btn-primary">Saqlash</button>
+        </div>
+    </div>
+</div>
+<div class="row container">
+    <ul class="list-group row" *ngFor="let item of items; index as i">
+        <li (click)="deleteItem(i,item.id)" class="list-group-item col-5">{{i+1}}: <img
+                src="../../assets/logos/trash-outline.svg" width="20px"> {{item?.text}}</li>
+    </ul>
+</div>

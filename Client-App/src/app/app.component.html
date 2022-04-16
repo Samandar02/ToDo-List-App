@@ -1,0 +1,20 @@
+<div class="jumbotron jumbotron-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">To-Do list</a>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" *ngIf="isSignedIn" [routerLink]="['auth']" [queryParams]="{type:'signup'}">Ro'yxatdan o'tish</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" *ngIf="isSignedIn" [routerLink]="['auth']" [queryParams]="{type:'signin'}">Kirish</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" *ngIf="!isSignedIn" (click)="signOut()">Chiqish</a>
+            </li>
+          </ul>
+      </nav>
+      <router-outlet></router-outlet>
+</div>
+<div class="container p-4" style="background-color: rgb(93, 255, 179);height: 100%;">
+  <app-to-do-app></app-to-do-app>
+</div>
